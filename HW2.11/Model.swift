@@ -21,3 +21,7 @@ struct Post: Decodable, Identifiable {
     let url: String?
     
 }
+
+enum URLS: String {
+    case api = "https://hn.algolia.com/api/v1/search?tags=front_page"
+}

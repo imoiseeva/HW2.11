@@ -11,11 +11,11 @@ class NewsTableViewController: UITableViewController {
     
     private var news = [Post]()
     
-    let url = "https://hn.algolia.com/api/v1/search?tags=front_page"
+    //let url = "https://hn.algolia.com/api/v1/search?tags=front_page"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        fetchData(from: URLS.api.rawValue)
     }
     
     // MARK: - Table view data source
@@ -45,8 +45,7 @@ class NewsTableViewController: UITableViewController {
         return cell
     }
     
-    private func fetchData() {
-        
+    private func fetchData(from url: String?) {
         NetworkManager.shared.fetchData(from: url) {  result in
             self.news.append(contentsOf: result.hits)
             self.tableView.reloadData()

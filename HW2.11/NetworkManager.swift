@@ -10,7 +10,7 @@ import Foundation
 class NetworkManager {
     
     static let shared = NetworkManager()
-   // private var post = [Post]()
+   
     
     func fetchData(from url: String?, with complition: @escaping (Results) -> Void) {
         guard let stringURL = url else { return }
