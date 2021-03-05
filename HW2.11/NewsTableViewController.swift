@@ -52,6 +52,15 @@ class NewsTableViewController: UITableViewController {
         }
     }
     
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let url = news[indexPath.row].url
+        let detailVC = segue.destination as! DetailViewController
+        detailVC.urlForWebView = url ?? "error"
+    }
+    
+    }
+    
+
 
 
