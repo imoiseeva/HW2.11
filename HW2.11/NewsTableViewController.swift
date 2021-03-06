@@ -6,22 +6,23 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewsTableViewController: UITableViewController {
     
     private var news = [Post]()
     
-    //let url = "https://hn.algolia.com/api/v1/search?tags=front_page"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         fetchData(from: URLS.api.rawValue)
+        print(news)
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
     
@@ -35,22 +36,26 @@ class NewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         var content = cell.defaultContentConfiguration()
-        
         let new = news[indexPath.row]
         content.text = new.title
-        content.secondaryText = String(new.points)
-        
+        content.secondaryText = String(new.points ?? 5)
         cell.contentConfiguration = content
         
         return cell
     }
-    
+   
     private func fetchData(from url: String?) {
         NetworkManager.shared.fetchData(from: url) {  result in
-            self.news.append(contentsOf: result.hits)
-            self.tableView.reloadData()
+
+           self.news.append(contentsOf: result.hits)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
+ 
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -58,6 +63,7 @@ class NewsTableViewController: UITableViewController {
         let detailVC = segue.destination as! DetailViewController
         detailVC.urlForWebView = url ?? "error"
     }
+    
     
     }
     
