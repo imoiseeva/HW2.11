@@ -18,44 +18,19 @@ class NetworkManager {
             .responseJSON { responseDate in
                 switch responseDate.result {
                 case .success(let value):
-                    Post.getNews(from: value)
-                    print(value["hits"])
-                //должна быть перемен и Post.getNews(from: value)
-                    // let newsArray = Post.getNews(from: value)
-                   
+                    guard let value = value as? [String: Any], let hits = value["hits"] as? [[String: Any]] else { complition(Results(hits: []))
+                        return }
+                    
+                    let news = Post.getNews(from: hits)
+                    let results = Results(hits: news)
+                    
+                    complition(results)
+                    
                 case .failure(let error):
                     print(error)
                 }
             }
     }
-    
-   
-    
-//    func fetchData(from url: String?, with complition: @escaping (Results) -> Void) {
-//        guard let stringURL = url else { return }
-//        guard let url = URL(string: stringURL) else { return }
-//
-//        URLSession.shared.dataTask(with: url) { (data, _, error) in
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//
-//            guard let data = data else { return }
-//
-//            do {
-//                let result = try JSONDecoder().decode(Results.self, from: data)
-//                DispatchQueue.main.async {
-//                    complition(result)
-//                }
-//            } catch let error {
-//                print(error)
-//            }
-//
-//        }.resume()
-//    }
-    
-
     
     private init() {}
 }

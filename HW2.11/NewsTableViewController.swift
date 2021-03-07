@@ -15,9 +15,7 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         fetchData(from: URLS.api.rawValue)
-        print(news)
     }
     
     // MARK: - Table view data source
@@ -43,17 +41,17 @@ class NewsTableViewController: UITableViewController {
         
         return cell
     }
-   
+    
     private func fetchData(from url: String?) {
         NetworkManager.shared.fetchData(from: url) {  result in
-
-           self.news.append(contentsOf: result.hits)
+            
+            self.news.append(contentsOf: result.hits)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
- 
+    
     
     // MARK: - Navigation
     
@@ -65,8 +63,8 @@ class NewsTableViewController: UITableViewController {
     }
     
     
-    }
-    
+}
+
 
 
 
