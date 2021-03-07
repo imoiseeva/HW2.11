@@ -36,7 +36,7 @@ class NewsTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let new = news[indexPath.row]
         content.text = new.title
-        content.secondaryText = String(new.points ?? 5)
+        content.secondaryText = String("Likes: \(new.points ?? 5)")
         cell.contentConfiguration = content
         
         return cell

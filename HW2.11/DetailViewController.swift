@@ -25,6 +25,5 @@ class DetailViewController: UIViewController, WKNavigationDelegate{
         webView.allowsBackForwardNavigationGestures = true
         }
     }
-
 }
 
