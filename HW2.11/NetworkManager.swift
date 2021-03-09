@@ -12,13 +12,16 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     
-    func fetchData(from url: String?, with complition: @escaping (Results) -> Void) {
+    func fetchData(from url: String?,
+                   with complition: @escaping (Results) -> Void) {
         AF.request(URLS.api.rawValue)
             .validate()
             .responseJSON { responseDate in
                 switch responseDate.result {
                 case .success(let value):
-                    guard let value = value as? [String: Any], let hits = value["hits"] as? [[String: Any]] else { complition(Results(hits: []))
+                    guard let value = value as? [String: Any],
+                          let hits = value["hits"] as? [[String: Any]]
+                    else { complition(Results(hits: []))
                         return }
                     
                     let news = Post.getNews(from: hits)

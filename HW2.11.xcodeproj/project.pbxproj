@@ -16,6 +16,7 @@
 		5FBDA27F25F12F1700BF12B8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDA27E25F12F1700BF12B8 /* NetworkManager.swift */; };
 		5FBDA28225F12F2700BF12B8 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDA28125F12F2700BF12B8 /* NewsTableViewController.swift */; };
 		5FBDA28825F2837D00BF12B8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBDA28725F2837D00BF12B8 /* DetailViewController.swift */; };
+		5FD69D7F25F78FEE009471B2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5FD69D7E25F78FEE009471B2 /* README.md */; };
 		ECBEB18D773BD42A0231DA63 /* Pods_HW2_11.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0907A289B8CEAAE456C8D75C /* Pods_HW2_11.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		5FBDA27E25F12F1700BF12B8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5FBDA28125F12F2700BF12B8 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		5FBDA28725F2837D00BF12B8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5FD69D7E25F78FEE009471B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "../../Documents/swift/Flash-Chat-iOS13/README.md"; sourceTree = "<group>"; };
 		92039D22A3C3E5424F30225F /* Pods-HW2.11.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW2.11.release.xcconfig"; path = "Target Support Files/Pods-HW2.11/Pods-HW2.11.release.xcconfig"; sourceTree = "<group>"; };
 		946DD293978DDD66C2968AA7 /* Pods-HW2.11.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW2.11.debug.xcconfig"; path = "Target Support Files/Pods-HW2.11/Pods-HW2.11.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 		5FBDA25A25F12EDA00BF12B8 = {
 			isa = PBXGroup;
 			children = (
+				5FD69D7E25F78FEE009471B2 /* README.md */,
 				5FBDA26525F12EDA00BF12B8 /* HW2.11 */,
 				5FBDA26425F12EDA00BF12B8 /* Products */,
 				52BF93FC79BCC6D87C724202 /* Pods */,
@@ -185,6 +188,7 @@
 			files = (
 				5FBDA27325F12EDC00BF12B8 /* LaunchScreen.storyboard in Resources */,
 				5FBDA27025F12EDC00BF12B8 /* Assets.xcassets in Resources */,
+				5FD69D7F25F78FEE009471B2 /* README.md in Resources */,
 				5FBDA26E25F12EDA00BF12B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
